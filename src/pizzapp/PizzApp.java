@@ -9,6 +9,9 @@ public class PizzApp extends javax.swing.JFrame {
     int extrak ;
     double vegsoAr;
     double meret;
+    int extra1 = 0;
+    int extra2 = 0;
+    int extra3 = 0;
 
     public PizzApp() {
         initComponents();
@@ -16,12 +19,6 @@ public class PizzApp extends javax.swing.JFrame {
         pizzaAlapAr = 1750 ;// songokuár
         
         meret = 1; //32 cm
-        
-        
-        
-        int extra1 = 0;
-        int extra2 = 0;
-        int extra3 = 0;
         
         db =1;
         extrak = extra1 + extra2 + extra3;
@@ -154,10 +151,25 @@ public class PizzApp extends javax.swing.JFrame {
         pnlExtrak.setBorder(javax.swing.BorderFactory.createTitledBorder("Extrák"));
 
         chbSajt.setText("sajt");
+        chbSajt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chbSajtActionPerformed(evt);
+            }
+        });
 
         chbHagyma.setText("hagyma");
+        chbHagyma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chbHagymaActionPerformed(evt);
+            }
+        });
 
         chbAnanasz.setText("ananász");
+        chbAnanasz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chbAnanaszActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlExtrakLayout = new javax.swing.GroupLayout(pnlExtrak);
         pnlExtrak.setLayout(pnlExtrakLayout);
@@ -271,9 +283,6 @@ public class PizzApp extends javax.swing.JFrame {
         }
         meret = 0; //32 cm
         
-        int extra1 = 0;
-        int extra2 = 0;
-        int extra3 = 0;
         
         db =1;
         extrak = extra1 + extra2 + extra3;
@@ -297,6 +306,49 @@ public class PizzApp extends javax.swing.JFrame {
         meret = 1;
         szamitasEsKiiras();
     }//GEN-LAST:event_rdbMeret32ItemStateChanged
+
+    private void chbSajtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbSajtActionPerformed
+        if (chbSajt.isSelected()){
+            extra1 = 300;
+            extrak = extra1 + extra2 + extra3;
+            szamitasEsKiiras();
+        }
+        else if (chbSajt.isSelected() == false){
+            extra1 = 0;
+            extrak = extra1 + extra2 + extra3;
+            szamitasEsKiiras();
+        }
+        
+    }//GEN-LAST:event_chbSajtActionPerformed
+
+    private void chbHagymaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbHagymaActionPerformed
+        if (chbHagyma.isSelected()){
+            extra2 = 400;
+            extrak = extra1 + extra2 + extra3;
+            szamitasEsKiiras();
+        }
+        else if (chbHagyma.isSelected() == false){
+            extra2 = 0;
+            extrak = extra1 + extra2 + extra3;
+            szamitasEsKiiras();
+        }
+        
+
+    }//GEN-LAST:event_chbHagymaActionPerformed
+
+    private void chbAnanaszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbAnanaszActionPerformed
+        if (chbAnanasz.isSelected()){
+            extra3 = 500;
+            extrak = extra1 + extra2 + extra3;
+            szamitasEsKiiras();
+        }
+        else if (chbAnanasz.isSelected() == false){
+            extra3 = 0;
+            extrak = extra1 + extra2 + extra3;
+            szamitasEsKiiras();
+        }
+        
+    }//GEN-LAST:event_chbAnanaszActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
