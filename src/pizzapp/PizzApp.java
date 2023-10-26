@@ -1,5 +1,7 @@
 package pizzapp;
 
+import com.sun.jdi.connect.Connector;
+
 public class PizzApp extends javax.swing.JFrame {
 
     public PizzApp() {
@@ -58,6 +60,11 @@ public class PizzApp extends javax.swing.JFrame {
 
         cmdValaszthatoPizzak.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Margherita", "Hawaii", "Songoku", "Diavola" }));
         cmdValaszthatoPizzak.setSelectedIndex(2);
+        cmdValaszthatoPizzak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdValaszthatoPizzakActionPerformed(evt);
+            }
+        });
 
         pnlMeret.setBorder(javax.swing.BorderFactory.createTitledBorder("Méret"));
 
@@ -239,6 +246,38 @@ public class PizzApp extends javax.swing.JFrame {
     private void rdbMeret32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbMeret32ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rdbMeret32ActionPerformed
+
+    private void cmdValaszthatoPizzakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdValaszthatoPizzakActionPerformed
+        
+        int indexSzama = cmdValaszthatoPizzak.getSelectedIndex();
+        int pizzaAlapAr = -1;
+        
+        if (indexSzama == 0){
+             pizzaAlapAr = 1750 ;
+        }
+        else if (indexSzama == 1){
+             pizzaAlapAr = 1850 ;
+        }
+        else if (indexSzama == 2){
+             pizzaAlapAr = 1950 ;
+        }
+        else if (indexSzama == 3){
+             pizzaAlapAr = 2050 ;
+        }
+        int meret = 1; //32 cm
+        
+        int extra1 = 0;
+        int extra2 = 0;
+        int extra3 = 0;
+        
+        int db =1;
+        int extrak = extra1 + extra2 + extra3;
+        
+        int vegsoAr = pizzaAlapAr * meret + extrak;
+        vegsoAr *= db;
+        lblAr.setText(vegsoAr + "");
+        
+    }//GEN-LAST:event_cmdValaszthatoPizzakActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
