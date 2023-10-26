@@ -26,9 +26,7 @@ public class PizzApp extends javax.swing.JFrame {
         db =1;
         extrak = extra1 + extra2 + extra3;
         
-        vegsoAr = pizzaAlapAr * meret + extrak;
-        vegsoAr *= db;
-        lblAr.setText(vegsoAr + "");
+        szamitasEsKiiras();
     }
 
     @SuppressWarnings("unchecked")
@@ -85,9 +83,9 @@ public class PizzApp extends javax.swing.JFrame {
         buttonGroup1.add(rdbMeret32);
         rdbMeret32.setSelected(true);
         rdbMeret32.setText("32 cm");
-        rdbMeret32.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdbMeret32ActionPerformed(evt);
+        rdbMeret32.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                rdbMeret32ItemStateChanged(evt);
             }
         });
 
@@ -254,10 +252,6 @@ public class PizzApp extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rdbMeret32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbMeret32ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rdbMeret32ActionPerformed
-
     private void cmvValaszthatoPizzakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmvValaszthatoPizzakActionPerformed
         
         int indexSzama = cmvValaszthatoPizzak.getSelectedIndex();
@@ -275,7 +269,7 @@ public class PizzApp extends javax.swing.JFrame {
         else if (indexSzama == 3){
              pizzaAlapAr = 2050 ;
         }
-        meret = 1; //32 cm
+        meret = 0; //32 cm
         
         int extra1 = 0;
         int extra2 = 0;
@@ -284,18 +278,25 @@ public class PizzApp extends javax.swing.JFrame {
         db =1;
         extrak = extra1 + extra2 + extra3;
         
-        vegsoAr = pizzaAlapAr * meret + extrak;
-        vegsoAr *= db;
-        lblAr.setText(vegsoAr + "");
+        szamitasEsKiiras();
         
     }//GEN-LAST:event_cmvValaszthatoPizzakActionPerformed
 
-    private void rdbMeret25ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbMeret25ItemStateChanged
-        double meret = .75;
+    private void szamitasEsKiiras() {
         vegsoAr = pizzaAlapAr * meret + extrak;
         vegsoAr *= db;
         lblAr.setText(vegsoAr + "");
+    }
+
+    private void rdbMeret25ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbMeret25ItemStateChanged
+        meret = .75;
+        szamitasEsKiiras();
     }//GEN-LAST:event_rdbMeret25ItemStateChanged
+
+    private void rdbMeret32ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbMeret32ItemStateChanged
+        meret = 1;
+        szamitasEsKiiras();
+    }//GEN-LAST:event_rdbMeret32ItemStateChanged
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
