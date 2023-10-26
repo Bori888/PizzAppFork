@@ -4,6 +4,23 @@ public class PizzApp extends javax.swing.JFrame {
 
     public PizzApp() {
         initComponents();
+        
+        int pizzaAlapAr2 = 1750 ;// songokuár
+        
+        int meret = 1; //32 cm
+        
+        
+        
+        int extra1 = 0;
+        int extra2 = 0;
+        int extra3 = 0;
+        
+        int db =1;
+        int extrak = extra1 + extra2 + extra3;
+        
+        int vegsoAr = pizzaAlapAr2 * meret + extrak;
+        vegsoAr *= db;
+        lblAr.setText(vegsoAr + "");
     }
 
     @SuppressWarnings("unchecked")
@@ -50,6 +67,11 @@ public class PizzApp extends javax.swing.JFrame {
         buttonGroup1.add(rdbMeret32);
         rdbMeret32.setSelected(true);
         rdbMeret32.setText("32 cm");
+        rdbMeret32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbMeret32ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMeretLayout = new javax.swing.GroupLayout(pnlMeret);
         pnlMeret.setLayout(pnlMeretLayout);
@@ -79,7 +101,7 @@ public class PizzApp extends javax.swing.JFrame {
         lblFizFt.setText("Ft");
 
         lblAr.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblAr.setText("1750");
+        lblAr.setText("0");
 
         numDb.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
 
@@ -213,6 +235,10 @@ public class PizzApp extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void rdbMeret32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbMeret32ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rdbMeret32ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
