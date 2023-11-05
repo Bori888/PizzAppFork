@@ -19,6 +19,7 @@ public class PizzApp extends javax.swing.JFrame {
     String feltet2 = "";
     String feltet3 = "";
 
+    
     public PizzApp() {
         initComponents();
         
@@ -361,8 +362,6 @@ public class PizzApp extends javax.swing.JFrame {
             extrak = extra1 + extra2 + extra3;
             szamitasEsKiiras();
         }
-        
-
     }//GEN-LAST:event_chbHagymaActionPerformed
 
     private void chbAnanaszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbAnanaszActionPerformed
@@ -382,20 +381,15 @@ public class PizzApp extends javax.swing.JFrame {
     }//GEN-LAST:event_chbAnanaszActionPerformed
 
     private void numDbStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_numDbStateChanged
-
         db = (Integer) numDb.getValue();
         szamitasEsKiiras();
     }//GEN-LAST:event_numDbStateChanged
 
     private void btnRendelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRendelActionPerformed
-        
         txaOsszesito.setText("A rendelt pizza típusa: " + PizzaNeve +" "
         + "\nMéret: " + atmero + " cm" + "\nMennyiség: " + db + " db" +
         "\nExtrák: " + feltet1 + " " + feltet2 + " " + feltet3 + 
-        "\n\nFizetendő:  " + vegsoAr + " Ft");
-        
-        
-
+        "\n\nFizetendő mennyiség :  " + vegsoAr + " Ft");
     }//GEN-LAST:event_btnRendelActionPerformed
 
     public static void main(String args[]) {
